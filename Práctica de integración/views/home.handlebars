@@ -1,0 +1,34 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Code</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Category</th>
+      <th>Thumbnails</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+    <tr>
+      <td>{{title}}</td>
+      <td>{{description}}</td>
+      <td>{{code}}</td>
+      <td>{{price}}</td>
+      <td>{{stock}}</td>
+      <td>{{category}}</td>
+      <td>
+        {{#each thumbnails}}
+        <img
+          src="{{this}}"
+          alt="Thumbnail"
+          style="max-width: 50px; max-height: 50px"
+        />
+        {{/each}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

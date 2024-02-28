@@ -1,0 +1,67 @@
+<h1>Real-Time Products</h1>
+
+<form id="addProductForm">
+  <label for="title">Title:</label>
+  <input type="text" name="title" placeholder="Title" required />
+
+  <label for="description">Description:</label>
+  <input type="text" name="description" placeholder="Description" required />
+
+  <label for="code">Code:</label>
+  <input type="text" name="code" placeholder="Code" required />
+
+  <label for="price">Price:</label>
+  <input type="number" name="price" placeholder="Price" required />
+
+  <label for="stock">Stock:</label>
+  <input type="number" name="stock" placeholder="Stock" required />
+
+  <label for="status">Status:</label>
+  <input type="text" name="status" placeholder="Status" required />
+
+  <label for="category">Category:</label>
+  <input type="text" name="category" placeholder="Category" required />
+
+  <label for="thumbnails">Thumbnails (separado por coma):</label>
+  <input type="text" name="thumbnails" placeholder="Thumbnail URLs" />
+
+  <button type="submit">Add Product</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Code</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Category</th>
+      <th>Thumbnails</th>
+    </tr>
+  </thead>
+  <tbody id="productTableBody">
+    {{#each products}}
+    <tr>
+      <td>{{title}}</td>
+      <td>{{description}}</td>
+      <td>{{code}}</td>
+      <td>{{price}}</td>
+      <td>{{stock}}</td>
+      <td>{{category}}</td>
+      <td>
+        {{#each thumbnails}}
+        <img
+          src="{{this}}"
+          alt="Thumbnail"
+          style="max-width: 50px; max-height: 50px"
+        />
+        {{/each}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>
