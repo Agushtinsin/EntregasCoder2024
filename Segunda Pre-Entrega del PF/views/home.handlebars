@@ -1,0 +1,48 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/home.css">
+
+<div class="topnav">
+  <a class="active" href="/">ModaMágica</a>
+  <a href="/chat">Chat</a>
+  <a href="/realtimeproducts">Real Time Products</a>
+  <a href="/products">Products</a>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Code</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Category</th>
+      <th>Thumbnails</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+    <tr>
+      <td>{{title}}</td>
+      <td>{{description}}</td>
+      <td>{{code}}</td>
+      <td>{{price}}</td>
+      <td>{{stock}}</td>
+      <td>{{category}}</td>
+      <td>
+        {{#each thumbnails}}
+        <img
+          src="{{this}}"
+          alt="Thumbnail"
+          style="max-width: 200px; max-height: 50px"
+        />
+        {{/each}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+

@@ -1,0 +1,23 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/products.css">
+
+<div class="topnav">
+  <a class="active" href="/products">ModaMágica</a>
+  <a href="/">Home</a>
+</div>
+
+<div class="products-container">
+    <h1>Productos</h1>
+    {{#each products}}
+        <div class="product">
+        <h2>{{title}}</h2>
+        <p>Precio: ${{price}}</p>
+        <p>Categoría: {{category}}</p>
+        <button class="add-to-cart-button" onclick="addToCart('{{_id}}')">Agregar al carrito</button>
+        <a href="/products/{{_id}}">Detalles</a>
+        </div>
+    {{/each}}
+</div>
