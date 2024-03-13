@@ -1,0 +1,34 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/products.css">
+
+<div class="topnav">
+    <a class="active" href="/products">ModaMágica</a>
+    <a href="/">Home</a>
+</div>
+
+<div class="product-details-container">
+    <h1>Detalles del Producto</h1>
+    <div class="product-details">
+        {{#if product.thumbnails}}
+          {{#each product.thumbnails}}
+            <img
+              src="{{thumbnails}}"
+              alt="Thumbnail"
+              style="max-width: 200px; max-height: 50px"
+            />
+          {{/each}}
+        {{else}}
+          <p>No hay imágenes disponibles</p>
+        {{/if}}
+        <h2>{{product.title}}</h2>
+        <p>Precio: ${{product.price}}</p>
+        <p>Categoría: {{product.category}}</p>
+        <p>Descripción: {{product.description}}</p>
+        <p>Stock: {{product.stock}}</p>
+        <button class="add-to-cart-button" onclick="addToCart('{{_id}}')">Agregar al carrito</button>
+        <a href="/products">Volver a la lista de productos</a>
+    </div>
+</div>
